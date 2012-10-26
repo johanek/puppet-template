@@ -1,5 +1,6 @@
+# Class foo::params
 class foo::params  {
-  
+
   # Disable service if package absent
   $service_ensure = $foo::enabled ? {
     false   => stopped,
@@ -8,7 +9,7 @@ class foo::params  {
       default => running
     }
   }
-  
+
   # Disable service boottime startup if package absent
   $service_enable = $foo::enableboot ? {
     false   => false,
@@ -17,11 +18,11 @@ class foo::params  {
       default => true
     }
   }
-  
+
   # Remove package
   $package_ensure = $foo::present ? {
     false   => absent,
     default => present
   }
-  
+
 }
