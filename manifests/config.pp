@@ -8,8 +8,10 @@ class foo::config {
   }
 
   file { '/etc/foo.conf':
-    ensure => present,
-    source => 'puppet:///modules/foo/foo.conf'
+    ensure  => present,
+    source  => 'puppet:///modules/foo/foo.conf'
+    require => Class['foo::install'],
+    notify  => Class['foo::service']
   }
 
 }
