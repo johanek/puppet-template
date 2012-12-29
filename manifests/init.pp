@@ -23,8 +23,8 @@ class foo (
   $enableboot = true,
   $version = latest
 ){
-    include foo::params
-    include foo::install
-    include foo::service
-    include foo::config
+  include foo::params
+  include foo::install
+  include foo::service
+  include foo::config
 }
