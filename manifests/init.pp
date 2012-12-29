@@ -20,7 +20,8 @@ class foo (
   # Parameters for Class
   $present = true,
   $enabled = true,
-  $enableboot = true
+  $enableboot = true,
+  $version = latest
 ){
     include foo::params
     include foo::install

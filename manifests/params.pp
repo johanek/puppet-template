@@ -19,10 +19,10 @@ class foo::params  {
     }
   }
 
-  # Remove package
+  # Remove package, or install defined version
   $package_ensure = $foo::present ? {
     false   => absent,
-    default => present
+    default => $foo::version
   }
 
 }
