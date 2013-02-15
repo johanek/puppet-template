@@ -22,8 +22,8 @@ class foo (
   $enableboot = true,
   $version = latest
 ){
-  include foo::params
-  include foo::install
-  include foo::service
-  include foo::config
+  class { 'foo::params': } ->
+  class { 'foo::install': } ->
+  class { 'foo::config': } ->
+  class { 'foo::service': }
 }
