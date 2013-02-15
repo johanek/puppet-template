@@ -7,18 +7,17 @@
 #
 # == Parameters
 #
-# [*present*]
-#   Set to 'false' to remove package
-#
 # [*enabled*]
-#   Set to 'false' to stop service
+#   Set to 'false' to stop service. Default: true
 #
 # [*enableboot*]
-#   Set to 'false' to prevent service starting at boot
+#   Set to 'false' to prevent service starting at boot. Default: true
+#
+# [*version*]
+#   Set to desired version. Default: latest
 #
 class foo (
   # Parameters for Class
-  $present = true,
   $enabled = true,
   $enableboot = true,
   $version = latest
