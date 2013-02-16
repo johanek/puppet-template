@@ -4,4 +4,5 @@ puppet-template
 Template puppet module
 
 Replace foo with name of module:
-find . \( ! -regex '.*/\..*' \) -type f -exec sed -i "" "s/foo/ntpd/g" '{}' ';'
+osx: find . -type f -exec sed -i "" "s/foo/ntpd/g" '{}' ';'
+linux: find . -type f -exec sed -i 's/foo/ntpd/g' '{}' ';' 
