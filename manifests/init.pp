@@ -24,6 +24,7 @@ class foo (
 ){
   class { 'foo::params': } ->
   class { 'foo::install': } ->
-  class { 'foo::config': } ->
-  class { 'foo::service': }
+  class { 'foo::config': } ~>
+  class { 'foo::service': } ->
+  Class['ntp']
 }

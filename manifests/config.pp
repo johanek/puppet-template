@@ -10,7 +10,6 @@ class foo::config {
   file { '/etc/foo.conf':
     ensure  => present,
     source  => 'puppet:///modules/foo/foo.conf'
-    notify  => Class['foo::service']
   }
 
 }
