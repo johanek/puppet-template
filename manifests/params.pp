@@ -4,12 +4,18 @@ class foo::params  {
   # Service Status
   $service_ensure = $foo::enabled ? {
     false   => stopped,
-    default => running
+    default => $foo::version ? {
+      'absent'  => stopped,
+      default   => running 
+    }
   }
 
   $service_enable = $foo::enableboot ? {
     false   => false,
-    default => true
+    default => $foo::Version ? {
+      'absent'  => false,
+      default   => true
+    }
   }
 
 }
